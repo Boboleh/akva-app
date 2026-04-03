@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavBar/>
     <div class="theme-background">
       <div class="bg-dark"></div>
     </div>
@@ -13,7 +12,7 @@
       <p>{{ page.about.description }}</p>
     </section>
     <div class="products-container">
-      <Card
+      <ProductCard
         v-for="product in products"
         :key="product.id"
         :product="product"
@@ -55,16 +54,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Card from "~/components/Card.vue"
-import Slider from "~/components/Slider.vue"
-import Gallery from "~/components/Gallery.vue"
-import NavBar from "~/components/NavBar.vue"
+import ProductCard from "~/components/product/ProductCard.vue"
+import Slider from "~/components/ui/Slider.vue"
+import Gallery from "~/components/ui/Gallery.vue"
 
 export default Vue.extend({
   name: 'IndexPage',
   components: {
-    NavBar,
-    Card,
+    ProductCard,
     Slider,
     Gallery
   },
@@ -81,9 +78,7 @@ export default Vue.extend({
       return this.$store.getters['product/products']
     },
     page(): any {
-      const page = this.$store.getters['page/page']
-      console.log('page', page)
-      return page
+      return this.$store.getters['page/page']
     }
   }
 })

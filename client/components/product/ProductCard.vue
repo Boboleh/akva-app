@@ -30,10 +30,10 @@
 </template>
 
 <script>
-import Slider from "~/components/Slider.vue"
+import Slider from "~/components/ui/Slider.vue"
 
 export default {
-  name: 'Card',
+  name: 'ProductCard',
   components: {
     Slider
   },

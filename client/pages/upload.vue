@@ -36,7 +36,6 @@ export default Vue.extend({
     },
 
     onUploaded(file: any) {
-      console.log('File uploaded:', file)
     },
 
     onError(error: string) {
@@ -49,11 +48,9 @@ export default Vue.extend({
 
     onChange(files: any[]) {
       this.uploadedImages = files
-      console.log('Uploaded images:', files)
     },
 
     onDeleted(file: any) {
-      console.log('File deleted:', file)
     }
   }
 })
